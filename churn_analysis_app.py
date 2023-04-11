@@ -297,7 +297,8 @@ def main():
                 st.markdown('- Ada-Boost model is performing better with our data.')
                 st.markdown('- We can observe Accuracy scores of Boosting algorithms Ada-Boost,Gradient Boost,XG-Boost are same.')
                 st.write(' ')
-                st.write('You can see Python code for Machine Learning [Here](https://github.com/TRGanesh/penguins_classification1/blob/main/penguins_DTClassification.ipynb)')
+                st.write('Python code for Machine Learning [Here](https://github.com/TRGanesh/Telecom-Churn-Analysis/blob/main/Customer_Churn_Classification.ipynb)')
+                st.write('Python code for Streamlit Web Page [Here](https://github.com/TRGanesh/Telecom-Churn-Analysis/edit/main/churn_analysis_app.py)')
        
                         
                 
