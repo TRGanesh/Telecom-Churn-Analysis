@@ -90,7 +90,7 @@ def main():
                 st.write("""Churn analysis is the evaluation of a company’s customer loss rate in order to reduce it. Also referred to as **Customer Attrition Rate**, churn can be minimized by assessing a business product and how people use it""")
             with image_column:
                 #st_lottie(lottie_coding1,height=300,key='lottie_coding1') 
-                st.image(Image.open('churn_customers_image.png'))
+                st.image(Image.open('churn_customers_image.png'),width=500)
         st.write('- - -')       
  
         # DESCRIBING CHURN ANALYSIS IN TELECOM INDUSTRY        
