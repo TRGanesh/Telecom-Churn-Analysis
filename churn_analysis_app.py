@@ -220,7 +220,7 @@ def main():
                 # PLOTTING LINE PLOT OF CHURN RATE WITH TENURE COLUMN
                 fig = px.line(x=churn_rate.index,y=churn_rate.values,labels={'x':'Tenure','y':'Chrun Rate'},height=600,width=900,template='simple_white')
                 fig.update_layout(hovermode='x')
-                fig.update_traces(line_color='#ffff99')
+                fig.update_traces(line_color='#FC4017')
                 fig.update_layout(hoverlabel=dict(bgcolor='black',
                                               font_size=16,
                                               font_family='Rockwell',
