@@ -3,6 +3,9 @@ streamlit_lottie
 streamlit_option_menu
 numpy
 pandas
+seaborn
+matplotlib
+plotly
 opencv_python
 Pillow
 joblib
