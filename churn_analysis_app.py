@@ -305,8 +305,8 @@ def main():
                         st.table(accuracy_df)  
                         
                 st.write('As per above table,')
-                st.markdown('- Ada-Boost model is performing better with our data.')
-                st.markdown('- We can observe Accuracy scores of Boosting algorithms Ada-Boost,Gradient Boost,XG-Boost are same.')
+                st.markdown('- Ada-Boost model is performing better with test/new data.')
+                st.markdown('- We can observe Accuracy scores of Boosting algorithms Random Forest,Ada-Boost,Gradient Boost,XG-Boost are nearly same.')
                 st.write(' ')
                 st.write('Python code for Machine Learning [Here](https://github.com/TRGanesh/Telecom-Churn-Analysis/blob/main/Customer_Churn_Classification.ipynb)')
                 st.write('Python code for Streamlit Web Page [Here](https://github.com/TRGanesh/Telecom-Churn-Analysis/edit/main/churn_analysis_app.py)')
