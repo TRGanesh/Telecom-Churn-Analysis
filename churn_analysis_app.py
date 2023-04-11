@@ -244,7 +244,7 @@ def main():
               space_col,text_col,space_col = st.columns((1,2,1))
               with text_col:
                 st.markdown('- 0 to 12 months')
-                st.markdown(' 12 to 24 months')
+                st.markdown('- 12 to 24 months')
                 st.markdown('- 24 to 48 months')
                 st.markdown('- more than 48 months')
             
