@@ -193,7 +193,7 @@ def main():
             # DESCRIPTION ABOUT CORRELATION PLOT
             inference_subheader('Inference:')
             st.write('Target having high positive correlation with a feature means on increasing that feature value,target is also increasing.High negative correlation with a feature means on increasing that feature value,target value is decreasing.')
-            st.write('''As Target value is Categorical,to get correlation values,i had converted that categorical data into **dummy variables**(one of the encoding technique).Let's say if a column has 2 unique values like Yes,No and let column name be col_name,after encoding in place of that column we get 2 columns named as 'col_name_Yes','col_name_NO',they contain 0/1 based on real target value.''')
+            st.write('''If we want correlation between categorical features,we have to convert them to numerical data.As Target value is Categorical,to get correlation values,i had converted categorical data(in whole dataset) into **dummy variables**(one of the encoding technique).Let's say if a column has 2 unique values like Yes,No and let column name be col_name,after encoding in place of that column we get 2 columns named as 'col_name_Yes','col_name_NO',they contain 0/1 based on real target value.''')
             st.write('Above barplot shows the dependency of Churn Rate with other Features.In that plot,highly positively correlated fetaures are reason for higher Churn Rate.And highly negative correlated features are reason for lower Churn Rate.')
             st.markdown('**Churn Rate is highly increasing,when**')
             st.markdown('- Customer is not provided with Online Security,Tech Support.')
