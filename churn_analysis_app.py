@@ -52,7 +52,7 @@ def main():
     # CREATING NAVIGATION BAR WITH OPTION MENU
     selected = streamlit_option_menu.option_menu(menu_title=None,
                                                  options=['Data','Analysis'],
-                                                 icons=['bi-database-fill','graph-down'],
+                                                 icons=['activity','graph-down'],
                                                  menu_icon='list',default_index=0,
                                                  orientation='horizontal',
                                                  styles={
