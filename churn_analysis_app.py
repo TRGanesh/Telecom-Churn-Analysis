@@ -79,7 +79,7 @@ def main():
     # CREATING HOME PAGE
     if selected=='Data':
         title('Churn Analysis')
-        lottie_coding1 = load_lottier('https://assets4.lottiefiles.com/packages/lf20_jcTRQijNzu.json')
+        #lottie_coding1 = load_lottier('https://assets4.lottiefiles.com/packages/lf20_jcTRQijNzu.json')
         # CONTAINER TO DESCRIBE ABOUT CHURN ANALYSIS IN GENERAL
         with st.container():
             text_column,image_column = st.columns((2,1))
@@ -88,8 +88,8 @@ def main():
                 st.write("""Customer churn analysis is the process of using the churn data to understand behavior of customers in a business.We can know some of the reasons why a customer is leaving.For better growth in a business,business owners should understand the major characteristics or facilities that they can provide to their customers.""")
                 st.write("""Customer Churn is one of the most problems for businesses such as Credit Card companies, cable service providers, SASS and telecommunication companies worldwide. Even though it is not the most fun to look at, customer churn metrics can help businesses improve customer retention.""")
                 st.write("""Churn analysis is the evaluation of a company’s customer loss rate in order to reduce it. Also referred to as **Customer Attrition Rate**, churn can be minimized by assessing a business product and how people use it""")
-            with image_column:
-                st_lottie(lottie_coding1,height=300,key='lottie_coding1')  
+            #with image_column:
+                #st_lottie(lottie_coding1,height=300,key='lottie_coding1')  
         st.write('- - -')       
  
         # DESCRIBING CHURN ANALYSIS IN TELECOM INDUSTRY        
