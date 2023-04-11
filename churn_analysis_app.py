@@ -85,9 +85,9 @@ def main():
             text_column,image_column = st.columns((2,1))
             with text_column:
                 subheader('What is Churn Analysis?')
-                st.write("""Customer churn analysis is the process of using the churn data to understand behavior of customers in a business.We can know some of the reasons why a customer is leaving.For better growth in a business,business owners should understand the major characteristics or facilities that they can provide to their customers.""")
-                st.write("""Customer Churn is one of the most problems for businesses such as Credit Card companies, cable service providers, SASS and telecommunication companies worldwide. Even though it is not the most fun to look at, customer churn metrics can help businesses improve customer retention.""")
-                st.write("""Churn analysis is the evaluation of a company’s customer loss rate in order to reduce it. Also referred to as **Customer Attrition Rate**, churn can be minimized by assessing a business product and how people use it""")
+                st.write("""Customer churn analysis is the process of using the churn data to understand behavior of customers in a business.We can know some of the reasons about why a customer is leaving.For better growth in a business,business owners should understand the major characteristics or facilities that they can provide to their customers.""")
+                st.write("""Customer Churn is one of the problems for businesses such as Credit Card companies, cable service providers, SASS and telecommunication companies worldwide. Even though it is not the most fun to look at, customer churn metrics can help businesses improve customer retention.""")
+                st.write("""Churn analysis is the evaluation of a company’s customer loss rate in order to reduce it. Also referred to as **Customer Attrition Rate**, churn can be minimized by assessing a business product and how people use it.""")
             with image_column:
                 #st_lottie(lottie_coding1,height=300,key='lottie_coding1') 
                 st.image(Image.open('churn_customers_image.png'),width=450)
@@ -95,7 +95,7 @@ def main():
  
         # DESCRIBING CHURN ANALYSIS IN TELECOM INDUSTRY        
         subheader('Churn Analysis in Telecom Industry')
-        st.write('We have Churn data of a Telecom Industry,dataset and feature description of features are displayed below.I did some analysis with better visualizations to understand the data.')
+        st.write('I downloaded Churn dataset of a Telecom Industry from Kaggle.Dataset and description of features are displayed below.I did some analysis with better visualizations to understand the data.')
         header('Dataset')
         st.dataframe(dataframe_explorer(df),use_container_width=True)
         
@@ -161,9 +161,9 @@ def main():
         st.write('- - -')    
         
         with st.container():
-            col_1,col_2,col_3 = st.columns((1,1,1))
+            col_1,col_2,col_3 = st.columns((1,2,1))
             with col_2:
-                plot_subheader('Correlation of Target Column')
+                plot_subheader('Correlation of Features with Target Column')
         
         # CONTAINER TO DISPLAY CORRELATION PLOT        
         with st.container():
@@ -192,15 +192,17 @@ def main():
             
             # DESCRIPTION ABOUT CORRELATION PLOT
             inference_subheader('Inference:')
-            st.write('Target having high positive correlation with a feature means on increasing that feature value,target is also increasing.High negative correlation with a feature means on increasing that feature value,target is decreasing.')
+            st.write('Target having high positive correlation with a feature means on increasing that feature value,target is also increasing.High negative correlation with a feature means on increasing that feature value,target value is decreasing.')
+            st.write('''As Target value is Categorical,to get correlation values,i had converted that categorical data into **dummy variables**(one of the encoding technique).Let's say if a column has 2 unique values like Yes,No and let column name be col_name,after encoding in place of that column we get 2 columns named as 'col_name_Yes','col_name_NO',they contain 0/1 based on real target value.''')
             st.write('Above barplot shows the dependency of Churn Rate with other Features.In that plot,highly positively correlated fetaures are reason for higher Churn Rate.And highly negative correlated features are reason for lower Churn Rate.')
             st.markdown('**Churn Rate is highly increasing,when**')
             st.markdown('- Customer is not provided with Online Security,Tech Support.')
-            st.markdown('- Customer has only One Month Contract with company.')
+            st.markdown('''- Also Customer's having One Month Contract with company are more likely to churn.''')
             st.markdown('**Churn Rate is highly decreasing,when**')
             st.markdown("- Customer's tenure length is high,that means more months of realtionship with company.")
-            st.markdown('- Customer having a Contract of Two Years with company,is less likely to Churn')
-            st.markdown('**Churn Rate has less dependency**,with providing of Streaming Movies and providing of MultiLines Phone Service to Customer.')
+            st.markdown('- Customer having a Contract of Two Years with company,is less likely to Churn.')
+            st.markdown('- Also if a customer is either a Partner or Dependent,then he less likely to churn.')
+            st.markdown('**Churn Rate has less (positive correlation) dependency**,with providing of Streaming Movies and providing of MultiLines Phone Service to Customer.')
             
     if selected == 'Analysis':
         with st.container():
@@ -237,7 +239,15 @@ def main():
             plot_subheader('Broader Cohort Groups')
             st.write('''Time-based cohorts are customers who signed up for a product or service during a particular time frame. Analyzing these cohorts shows the customers’ behavior depending on the time they started using a company’s products or services.''')
             st.write('As tenure is number of months a customer being engaged with company.I clustered customers based on tenure length.Below Scatter plot is in between the features Monthly Charges and Total Charges,coloring with Tenure Cohorts.')
-    
+            st.write('4 cohorts can be formed form tenure column,they are:')
+            with st.container():
+              space_col,text_col,space_col = st.columns((1,2,1))
+              with text_col:
+                st.markdown('- 0 to 12 months')
+                st.markdown(' 12 to 24 months')
+                st.markdown('- 24 to 48 months')
+                st.markdown('- more than 48 months')
+            
             # CREATING A FUNCTION THAT CREATES COHORTS BASED ON TENURE(NUMBER OF MONTHS)
             def create_group(tenure_value):
                 if tenure_value in range(1,12+1):
@@ -257,7 +267,8 @@ def main():
             fig.update_layout(legend=dict(font=dict(size=15)))
             fig.update_traces(textfont_size=20)
             st.plotly_chart(fig,use_container_width=True) 
-            
+            st.write(' ')
+            st.write('From above scatter plot,you can see how clearly the groups/cohorts of customers are divided based on Monthly and Total Charges.')
         st.write('- - -')
         # PREDICTIVE MODELLING
         with st.container():
