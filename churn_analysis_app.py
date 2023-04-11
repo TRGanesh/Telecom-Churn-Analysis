@@ -39,7 +39,7 @@ def load_lottier(url):
     return r.json()
 
 # LOADING DATASET  
-df = pd.read_csv('/Users/mac/Downloads/Model_Deployment_1/Customer_Churn_Analysis/Telco-Customer-Churn.csv')
+df = pd.read_csv('Telco-Customer-Churn.csv')
 df.index = range(1,len(df)+1)
 
 def main():
@@ -47,16 +47,16 @@ def main():
     def local_css(file_name):
         with open(file_name) as f:
             st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
-    local_css('/Users/mac/Downloads/Model_Deployment_1/Customer_Churn_Analysis/style.css')
+    local_css('style.css')
     
     # CREATING NAVIGATION BAR WITH OPTION MENU
     selected = streamlit_option_menu.option_menu(menu_title=None,
-                                                 options=['Home','page2'],
-                                                 icons=['house','activity'],
+                                                 options=['Data','Analysis'],
+                                                 icons=['database','graph-down'],
                                                  menu_icon='list',default_index=0,
                                                  orientation='horizontal',
                                                  styles={
-                                                     'container':                  {'padding':'0!important','backgorund-color':'#white'},
+                                                     'container': {'padding':'0!important','backgorund-color':'#white'},
                                                      'icon':
                                                          {'color':'yellow','fontsize':'25px'},
                                                      'nav-link':
@@ -77,9 +77,9 @@ def main():
                
     
     # CREATING HOME PAGE
-    if selected=='Home':
+    if selected=='Data':
         title('Churn Analysis')
-        #lottie_coding1 = load_lottier('https://assets4.lottiefiles.com/packages/lf20_jcTRQijNzu.json')
+        lottie_coding1 = load_lottier('https://assets4.lottiefiles.com/packages/lf20_jcTRQijNzu.json')
         # CONTAINER TO DESCRIBE ABOUT CHURN ANALYSIS IN GENERAL
         with st.container():
             text_column,image_column = st.columns((2,1))
@@ -202,7 +202,7 @@ def main():
             st.markdown('- Customer having a Contract of Two Years with company,is less likely to Churn')
             st.markdown('**Churn Rate has less dependency**,with providing of Streaming Movies and providing of MultiLines Phone Service to Customer.')
             
-    if selected == 'page2':
+    if selected == 'Analysis':
         with st.container():
             header('Cohort Analysis')        
             st.write('''Cohort Analysis is a form of behavioral analytics that takes data from a given subset, such as a SaaS business, game, or e-commerce platform, and groups it into related groups rather than looking at the data as one unit. The groupings are referred to as cohorts. They share similar characteristics such as time and size.''')
@@ -286,7 +286,7 @@ def main():
             with st.container():
                 subheader('Accuracy Scores')
                 st.write('**Accuracy Scores of Classification models on Test data**') 
-                accuracy_df = pd.read_csv('/Users/mac/Downloads/Model_Deployment_1/Customer_Churn_Analysis/Final_Accuarcy_df.csv')
+                accuracy_df = pd.read_csv('Final_Accuarcy_df.csv')
                 accuracy_df.index = accuracy_df.index + 1
                 with st.container():
                     df_column,space_column = st.columns((2,1))
